@@ -1,101 +1,188 @@
-*, *::before, *::after {
+
+  
+*{
   margin: 0;
   padding: 0;
-  outline: 0 none;
-  list-style: none;
-  text-decoration: none;
+  box-sizing: border-box;
 }
-
-html,
-body {
-  width: 100%;
+html,body{
   height: 100%;
 }
-
-body {
-  display: flex;
+body{
+  display: grid;
+  place-items: center;
+  background: url("bg.jpeg");
+  text-align: center;
+}
+h3{
+    color: rgb(110, 46, 46);
+}
+.relogio{
   position: relative;
+  display: flex;
   align-items: center;
   justify-content: center;
-  background-color: gainsboro;
-}
-body .container {
-  overflow: hidden;
-  background-size: cover;
-  border: 25px outset rgba(183, 185, 27, 0.911);
-  background-position: center;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+  background: #dde1e7;
+  height: 250px;
+  width: 250px;
   border-radius: 50%;
-  background-repeat: no-repeat;
-  box-shadow: 0px 0px 7px rgb(145, 55, 55);
-  width: 400px;
-  height: 400px;
-  background-color: #483DC1;
-  background-image: url("https://1.bp.blogspot.com/-yEovcKTuoC0/U5TrBtVCNyI/AAAAAAAA1pw/L1_u1P-GTNg/s1600/8.png");
+  box-shadow: -3px -3px 7px #ffffff73,
+              3px 3px 5px rgba(94,104,121,0.288);
 }
-body .container #centro {
+.relogio:before{
   position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: 10;
-  margin: auto;
-  box-shadow: 0px 0px 2px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+  content: '';
+  height: 220px;
+  width: 220px;
+  background: #dde1e7;
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  background-color: rgb(104, 31, 31);
+  box-shadow: inset -3px -3px 7px #ffffff73,
+              inset 3px 3px 5px rgba(94,104,121,0.288);
 }
-body .container #segundos {
-  z-index: 8;
+.relogio:after{
   position: absolute;
-  margin: 30px 197px;
-  box-shadow: 0px 0px 2px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
-  border-radius: 6px;
-  transform-origin: 3px bottom;
-  width: 5px;
-  height: 170px;
-  background-color: #bc0a24;
+  content: '';
+  height: 120px;
+  width: 120px;
+  background: #dde1e7;
+  border-radius: 50%;
+  box-shadow: -1px -1px 5px #ffffff73,
+              1px 1px 3px rgba(94,104,121,0.288);
 }
-body .container #minutos {
+.relogio .porca-central{
+  height: 15px;
+  width: 15px;
+  background: #404040;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+}
+.relogio .porca-central2{
+  height: 9px;
+  width: 9px;
+  background: #3104B4;
+  border-radius: 50%;
+  z-index: 15;
+  position: absolute;
+}
+.indicadores div{
+  position: absolute;
+  width: 2px;
+  height: 5px;
+  background: #404040;
+}
+.indicadores div:nth-child(1){
+  transform: rotate(30deg) translateY(-100px);
+}
+.indicadores div:nth-child(2){
+  transform: rotate(60deg) translateY(-100px);
+}
+.indicadores div:nth-child(3){
+  background: rgb(16, 141, 26);
+  transform: rotate(90deg) translateY(-100px);
+}
+.indicadores div:nth-child(4){
+  transform: rotate(120deg) translateY(-100px);
+}
+.indicadores div:nth-child(5){
+  transform: rotate(150deg) translateY(-100px);
+}
+.indicadores div:nth-child(6){
+  background: rgb(4, 180, 63);
+  transform: rotate(180deg) translateY(-100px);
+}
+.indicadores div:nth-child(7){
+  transform: rotate(210deg) translateY(-100px);
+}
+.indicadores div:nth-child(8){
+  transform: rotate(240deg) translateY(-100px);
+}
+.indicadores div:nth-child(9){
+  background: rgb(10, 180, 4);
+  transform: rotate(270deg) translateY(-100px);
+}
+.indicadores div:nth-child(10){
+  transform: rotate(300deg) translateY(-100px);
+}
+.indicadores div:nth-child(11){
+  transform: rotate(330deg) translateY(-100px);
+}
+.indicadores div:nth-child(12){
+  background: rgb(27, 160, 15);
+  transform: rotate(360deg) translateY(-100px);
+}
+.sec-hand,.min-hand,.hr-hand{
+  position: absolute;
+}
+.sec-hand, .sec{
+  height: 180px;
+  width: 180px;
   z-index: 6;
-  position: absolute;
-  margin: 40px 195px;
-  box-shadow: 0px 0px 2px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
-  border-radius: 6px;
-  transform-origin: 5px bottom;
-  width: 10px;
-  height: 160px;
-  background-color: rgb(198, 16, 214);
 }
-body .container #horas {
+.min-hand, .min{
+  height: 140px;
+  width: 140px;
+  z-index: 5;
+}
+.hr-hand, .hr{
+  height: 110px;
+  width: 110px;
   z-index: 4;
-  margin: 75px 195px;
+}
+.sec,.min,.hr{
+  display: flex;
+  justify-content: center;
   position: absolute;
-  box-shadow: 0px 0px 2px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
-  border-radius: 6px;
-  transform-origin: 5px bottom;
+}
+.sec:before{
+  position: absolute;
+  content: '';
+  height: 110px;
+  width: 3px;
+  background: #3104B4;
+}
+.sec:after{
+  position: absolute;
+  content: '<';
+  height: 37px;
   width: 10px;
-  height: 125px;
-  background-color: rgb(138, 25, 25);
+  background: rgb(68, 167, 77);
+  top: 105px;
+  border-radius: 5px;
+box-shadow:-7px 4px 10px black;
+}
+.min:before{
+  position: absolute;
+  content: '';
+  width: 1px;
+  top: -15px;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 60px solid #0a0605;
+}
+.min:after{
+  position: absolute;
+  content: '';
+  width: 3px;
+  top: 40px;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-top: 30px solid #9c5f56;
+}
+.hr:before{
+  position: absolute;
+  content: '';
+  width: 1px;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 35px solid #9e5f5f;
+}
+.hr:after{
+  position: absolute;
+  content: '';
+  width: 3px;
+  top: 34px;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-top: 25px solid #8f5151;
 }
