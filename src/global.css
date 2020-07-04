@@ -1,87 +1,101 @@
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  -o-border-radius: $radius;
-  border-radius: $radius;
-}
-@mixin box($width, $height, $backgroundColor: null) {
-  width: $width;
-  height: $height;
-  @if ($backgroundColor) {
-    backgroundo-color: $backgroundColor;
-  }
-}
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   outline: 0 none;
   list-style: none;
-  box-sizing: border-box;
+  text-decoration: none;
 }
+
 html,
 body {
-  @include box(100%, 100%);
+  width: 100%;
+  height: 100%;
 }
+
 body {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
   background-color: gainsboro;
-
-  .container {
-    overflow: hidden;
-    background-size: cover;
-    border: 25px solid black;
-    background-position: center;
-    @include border-radius(50%);
-    background-repeat: no-repeat;
-    box-shaldow: 0px 0px 7px black;
-    @include box(400px, 400px, #483dc1);
-    background-image: url("https://1.bp.blogspot.com/-
-    yEovcKTuoC0/U5TrBtVCNyI/AAAAAAAA1pw/L1_u1P-GTNg/s1600/8.png");
-
-    #centro {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      right: 0px;
-      bottom: 0px;
-      z-index: 10;
-      margin: auto;
-      box-shadow: 0px 0px2px;
-      @include border-radius(50%);
-      @include box(25px, 25px, #000);
-    }
-    #segundos {
-      z-index: 8;
-      position: absolute;
-      margin: 30px 197px;
-      box-shadow: 0px 0px 2px;
-      @include border-radius(6px);
-      transform-origin: 3px bottom;
-      @include box(5px, 170px, #bc0a24);
-    }
-    #minutos {
-      z-index: 6;
-      position: absolute;
-      margin: 40px 195px;
-      box-shadow: 0px 0px 2px;
-      @include boder-radis(6px);
-      transform-origin: 5px bottom;
-      @include box(10px, 160px, #000);
-    }
-    #horas {
-      z-index: 4;
-      margin: 75px 195px;
-      position: absolute;
-      box-shadow: 0px 0px 2px;
-      @include boder-radis(6px);
-      transform-origin: 5px bottom;
-      @include box(10px, 125px, #000);
-    }
-  }
+}
+body .container {
+  overflow: hidden;
+  background-size: cover;
+  border: 25px outset rgba(183, 185, 27, 0.911);
+  background-position: center;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 7px rgb(145, 55, 55);
+  width: 400px;
+  height: 400px;
+  background-color: #483DC1;
+  background-image: url("https://1.bp.blogspot.com/-yEovcKTuoC0/U5TrBtVCNyI/AAAAAAAA1pw/L1_u1P-GTNg/s1600/8.png");
+}
+body .container #centro {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 10;
+  margin: auto;
+  box-shadow: 0px 0px 2px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: rgb(104, 31, 31);
+}
+body .container #segundos {
+  z-index: 8;
+  position: absolute;
+  margin: 30px 197px;
+  box-shadow: 0px 0px 2px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  transform-origin: 3px bottom;
+  width: 5px;
+  height: 170px;
+  background-color: #bc0a24;
+}
+body .container #minutos {
+  z-index: 6;
+  position: absolute;
+  margin: 40px 195px;
+  box-shadow: 0px 0px 2px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  transform-origin: 5px bottom;
+  width: 10px;
+  height: 160px;
+  background-color: rgb(198, 16, 214);
+}
+body .container #horas {
+  z-index: 4;
+  margin: 75px 195px;
+  position: absolute;
+  box-shadow: 0px 0px 2px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  transform-origin: 5px bottom;
+  width: 10px;
+  height: 125px;
+  background-color: rgb(138, 25, 25);
 }
